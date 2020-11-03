@@ -31,13 +31,12 @@ cp config-gui pi-gen
 
 cd pi-gen
 
-./build-docker.sh -c $whichconfig
+PRESERVE_CONTAINER=1 ./build-docker.sh -c $whichconfig
 
 cd ..
 
-mv pi-gen/deploy .
+mkdir deploy
+sudo docker cp pigen_work:/pi-gen/deploy/* deploy/
 
-docker rm -v pigen_work
-
-
-rm -rf pi-gen
+#docker rm -v pigen_work
+#rm -rf pi-gen
