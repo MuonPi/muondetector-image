@@ -10,3 +10,5 @@ In order to run this script, you need to have docker installed, as well as the b
 The script will attempt to start the binfmt-support service itself, if it cannot do this, it will exit.
 
 After running, if all went well, there will be an image in a folder `deploy` within the main directory.
+
+It uses the project [pi-gen](https://github.com/RPi-Distro/pi-gen) to generate the image. Read the documentation there to see which steps you need to take to modify the image.
