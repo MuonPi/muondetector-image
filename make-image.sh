@@ -1,5 +1,15 @@
 #!/bin/sh
 
+whichconfig=config-lite
+
+if [ $# -gt 0 ]; then
+    if [ $1 = "gui" ]; then
+        whichconfig=config-gui
+    fi
+fi
+
+echo "using config $whichconfig"
+
 echo "Trying to start binfmt-support service..."
 sudo systemctl start binfmt-support.service
 
@@ -14,17 +24,20 @@ fi
 
 git clone https://github.com/RPi-Distro/pi-gen.git
 
-cp -r stage-muondetector pi-gen
-cp config pi-gen
+cp -r stage-muondetector-lite pi-gen
+cp -r stage-muondetector-gui pi-gen
+cp config-lite pi-gen
+cp config-gui pi-gen
 
 cd pi-gen
 
-./build-docker.sh -c config
-
-docker rm -v pigen_work
+./build-docker.sh -c $whichconfig
 
 cd ..
 
 mv pi-gen/deploy .
+
+docker rm -v pigen_work
+
 
 rm -rf pi-gen
