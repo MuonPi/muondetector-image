@@ -3,7 +3,11 @@
 !README.md
 !.gitignore
 !make-image.sh
-!config
-!stage-muondetector
-!stage-muondetector/*
-!stage-muondetector/*/*
+!config-lite
+!config-gui
+!stage-muondetector-lite
+!stage-muondetector-lite/*
+!stage-muondetector-lite/*/*
+!stage-muondetector-gui
+!stage-muondetector-gui/*
+!stage-muondetector-gui/*/*
