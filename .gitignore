@@ -5,4 +5,5 @@
 !make-image.sh
 !config
 !stage-muondetector
-!stage-muondtector/
+!stage-muondetector/*
+!stage-muondetector/*/*

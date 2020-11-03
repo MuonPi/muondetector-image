@@ -1,0 +1,9 @@
+#!/bin/bash
+
+IMG_NAME="muondetector-lite"
+RELEASE="buster"
+TARGET_HOSTNAME="muondetector"
+KEYBOARD_KEYMAP="de"
+TIMEZONE_DEFAULT="Europe/Berlin"
+ENABLE_SSH=1
+STAGE_LIST="stage0 stage1 stage2 stage-muondetector"
