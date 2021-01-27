@@ -20,7 +20,7 @@ fi
 
 if [ -e pi-gen ]; then
     rm -rf pi-gen
-f
+fi
 
 git clone https://github.com/RPi-Distro/pi-gen.git
 
