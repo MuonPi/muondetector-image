@@ -1,6 +1,6 @@
 #!/bin/bash
 
-IMG_NAME="muondetector-lite"
+IMG_NAME="muondetector"
 RELEASE="buster"
 TARGET_HOSTNAME="muondetector"
 KEYBOARD_KEYMAP="de"
