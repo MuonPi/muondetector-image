@@ -11,7 +11,7 @@ fi
 echo "using config $whichconfig"
 
 echo "Trying to start binfmt-support service..."
-sudo systemctl start binfmt-support.service
+systemctl start binfmt-support.service
 
 if [ $? -gt 0 ]; then
     echo "Please make sure you have binfmt-support installed on your system." 
