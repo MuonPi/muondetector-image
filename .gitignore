@@ -3,6 +3,7 @@
 !README.md
 !.gitignore
 !make-image.sh
+!make-image-docker.sh
 !config-lite
 !config-gui
 !stage-muondetector-lite
