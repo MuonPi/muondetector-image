@@ -20,7 +20,7 @@ fi
 
 if [ -e pi-gen ]; then
     rm -rf pi-gen
-f
+fi
 
 git clone https://github.com/RPi-Distro/pi-gen.git
 
@@ -31,7 +31,7 @@ cp config-gui pi-gen
 
 cd pi-gen
 
-./build.sh -c $whichconfig
+./build-docker.sh -c $whichconfig
 
 cd ..
 
