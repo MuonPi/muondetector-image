@@ -1,0 +1,42 @@
+#!/bin/bash
+G="\e[1;38;5;2m"
+R="\e[1;38;5;1m"
+
+DaemonStatus=$(systemctl is-active muondetector-daemon.service)
+DaemonStatusCode=$?
+
+if [ $DaemonStatusCode -gt 0 ];then
+	#inactive
+	DaemonColor=$R
+else
+	#active
+	DaemonColor=$G
+fi
+
+MqttStatusCode=$(tac /var/log/syslog | grep MQTT | sed -n 1p | grep 'MQTT (re)connected' > /dev/null; echo $?)  # Are there better ways for this?
+if [ $MqttStatusCode -gt 0 ];then
+	#fail
+	MqttColor=$R
+	MqttStatus="not connected"
+else
+	#success
+	MqttColor=$G
+	MqttStatus="connected"
+fi
+echo -e ""
+echo -e "$G            Ψψω              " ""
+echo -e "$G             ΨΌΫΨφωρΚΜΫΨΨΜ   " ""
+echo -e "$G       ρφΚΜΚΚΚΨ   ΅΅  ήΚ     " ""
+echo -e "$G    ;ΚΜΨΨψβΚφΓ               " ""
+echo -e "$R     ;ΦΜ΅΅      μω      ·ωω  " " __  __ _   _  ___  _   _       _  "
+echo -e "$R    χβ΅        ;Κβ      ΦΨΉ  " "|  \/  | | | |/ _ \| \ | |____ (_) "
+echo -e "$R   ·ΚΉ         ΦΨ      ;Κβ   " "| |\/| | | | | | | |  \| |  _ \| | "
+echo -e "$R   ΔΦ         χΨΜ     χΦΨ΅   " "| |  | | |_| | |_| | |\  | |_) | | "
+echo -e "$R  ·Ψ         ·ΨΨΨωμώφΜΤΚΨωω  " "|_|  |_|\___/ \___/|_| \_|  __/|_| "
+echo -e "$R   Φψ        ΦΨΓ ΅΅΅    ΅΅   " "                         |_|       "
+echo -e "$R    ΫΦ      ;ΨΒ              " ""
+echo -e "$R     Ψω     ΅΅               " "Daemon status:    $DaemonColor⬤ $DaemonStatus"
+echo -e "$R      ΨΨωρ;μφ                " "MQTT-Connection:  $MqttColor⬤ $MqttStatus"
+echo -e "$R        ΅΅΅΅ΨΨω              " ""
+echo -e "$R              ΅ΫΨΨΜΓ         " ""
+echo -e "\e[0m"
