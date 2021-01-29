@@ -6,5 +6,5 @@ TARGET_HOSTNAME="muondetector"
 KEYBOARD_KEYMAP="de"
 TIMEZONE_DEFAULT="Europe/Berlin"
 ENABLE_SSH=1
-FIRST_USER_NAME="muonpi"
+FIRST_USER_NAME="pi"
 STAGE_LIST="stage0 stage1 stage2 stage-muondetector-lite"
