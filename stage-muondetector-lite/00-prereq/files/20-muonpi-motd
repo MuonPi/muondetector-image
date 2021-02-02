@@ -1,0 +1,51 @@
+#!/bin/bash
+#MuonPi message-of-the-day
+
+#SYMBOLS: ⬤🗴🗸
+R="\e[1;38;5;1m"  # Red
+G="\e[1;38;5;2m"  # Green
+B="\e[1;38;5;4m"  # Blue
+Y="\e[1;38;5;3m"  # Yellow
+W="\e[39m" # Clear color
+ca="\e[0m"  # Clear all
+u="\e[4m"   # Undlerline
+cu="\e[24m" # Clear underline
+b="\e[1m"   # Bold
+cb="\e[21m" # Clear Bold
+
+
+DaemonStatus=$(systemctl is-active muondetector-daemon.service)
+if [ $? -gt 0 ];then
+	#inactive
+	DaemonStatus="$R⬤  $DaemonStatus"
+else
+	#active
+	DaemonStatus="$G⬤  $DaemonStatus"
+fi
+
+if [ $(netstat -t -p muondetector-daemon 2> /dev/null | grep 1883 | wc -l) -eq 0 ];then
+	#fail
+	MqttStatus="$R⬤  not connected"
+else
+	#success
+	MqttStatus="$G⬤  connected"
+fi
+
+
+echo -e ""
+echo -e "$G            Ψψω               "    ""
+echo -e "$G             ΨΌΫΨφωρΚΜΫΨΨΜ    "    ""
+echo -e "$G       ρφΚΜΚΚΚΨ   ΅΅  ήΚ      "    ""
+echo -e "$G    ;ΚΜΨΨψβΚφΓ                "    ""
+echo -e "$R     ;ΦΜ΅΅      μω      ·ωω   "$R  " __  __ _   _  ___  _   _       _  "
+echo -e "$R    χβ΅        ;Κβ      ΦΨΉ   "$R  "|  \/  | | | |/ _ \| \ | |____ (_) "
+echo -e "$R   ·ΚΉ         ΦΨ      ;Κβ    "$R  "| |\/| | | | | | | |  \| |  _ \| | "
+echo -e "$R   ΔΦ         χΨΜ     χΦΨ΅    "$R  "| |  | | |_| | |_| | |\  | |_) | | "
+echo -e "$R  ·Ψ         ·ΨΨΨωμώφΜΤΚΨωω   "$R  "|_|  |_|\___/ \___/|_| \_|  __/|_| "
+echo -e "$R   Φψ        ΦΨΓ ΅΅΅    ΅΅    "$R  "                         |_|       "
+echo -e "$R    ΫΦ      ;ΨΒ               "    ""
+echo -e "$R     Ψω     ΅΅                "$R  "Daemon status:    $DaemonStatus"
+echo -e "$R      ΨΨωρ;μφ                 "$R  "MQTT-Connection:  $MqttStatus"
+echo -e "$R        ΅΅΅΅ΨΨω               "    ""
+echo -e "$R              ΅ΫΨΨΜΓ          "    ""
+echo -e "\e[0m"
