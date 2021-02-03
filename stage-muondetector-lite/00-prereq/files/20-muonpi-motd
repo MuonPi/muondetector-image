@@ -23,7 +23,7 @@ else
 	DaemonStatus="$G⬤  $DaemonStatus"
 fi
 
-if [ $(netstat -t -p muondetector-daemon 2> /dev/null | grep 1883 | wc -l) -eq 0 ];then
+if [ $(netstat -t -p muondetector-daemon 2> /dev/null | grep 1883 | wc -l) -ne 1 ];then
 	#fail
 	MqttStatus="$R⬤  not connected"
 else
