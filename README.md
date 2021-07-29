@@ -16,7 +16,7 @@ It is recommended to use docker for building the image.
 ## building with docker
 In order to run the docker script, you need to have docker installed, as well as the binfmt-support service running on your system.
 
-`sudo apt install docker binfmt-suport`
+`sudo apt install docker.io binfmt-suport`
 
 run `./make-image-docker.sh` to build the image.
 
