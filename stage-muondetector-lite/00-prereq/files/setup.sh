@@ -5,6 +5,11 @@ echo "For this first setup, please set a new password for the pi user:"
 
 sudo passwd pi
 
+echo "Starting and stopping muondetector-daemon. (hack: https://github.com/MuonPi/muondetector/issues/38)"
+sudo systemctl start muondetector-daemon
+sleep 3
+sudo systemctl stop muondetector-daemon
+
 echo "Testing internet connection..."
 ping -c 2 muonpi.org &> /dev/null
 
