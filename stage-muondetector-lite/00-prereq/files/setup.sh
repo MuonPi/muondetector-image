@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 
 echo "Welcome to your muondetector."
 echo "For this first setup, please set a new password for the pi user:"
