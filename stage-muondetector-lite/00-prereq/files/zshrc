@@ -1,0 +1,23 @@
+autoload -U promptinit && promptinit
+autoload -U colors && colors
+autoload -Uz add-zsh-hook
+autoload -Uz compinit && compinit
+autoload -Uz vcs_info
+autoload zkbd
+zmodload zsh/zle
+
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+
+setopt appendhistory nomatch nobeep correct prompt_subst
+
+export EDITOR=vim
+
+
+
+if [[ -d ${ZDOTDIR:-$HOME}/.zshrc.d ]]; then
+    for f in ${ZDOTDIR:-$HOME}/.zshrc.d/[0-9][0-9]-*.zsh; do
+        source "$f"
+    done
+fi

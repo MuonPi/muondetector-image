@@ -2,8 +2,8 @@
 
 systemctl disable muondetector-daemon
 
-chown pi:pi /home/pi/.bash_profile
-chmod +x /home/pi/.bash_profile
+chown -R pi:pi /home/pi/
+chmod -R +x /home/pi/
 
 #enable_uart=1
 raspi-config nonint do_serial 0

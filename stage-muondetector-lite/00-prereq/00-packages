@@ -1,3 +1,5 @@
 curl
 gpg
-
+zsh
+zsh-autosuggestions
+zsh-syntax-highlighting

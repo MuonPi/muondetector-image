@@ -33,4 +33,4 @@ sudo systemctl start muondetector-daemon
 
 echo "You are all setup!"
 
-rm /home/pi/.bash_profile
+rm ~/.profile
