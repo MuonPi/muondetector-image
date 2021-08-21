@@ -10,6 +10,7 @@
 !stage-muondetector-lite/*
 !stage-muondetector-lite/*/*
 !stage-muondetector-lite/*/*/*
+!stage-muondetector-lite/*/*/*/*
 !stage-muondetector-gui
 !stage-muondetector-gui/*
 !stage-muondetector-gui/*/*
