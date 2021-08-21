@@ -24,12 +24,16 @@ fi
 
 git clone https://github.com/RPi-Distro/pi-gen.git
 
-cp -r stage-muondetector-lite pi-gen
-cp -r stage-muondetector-gui pi-gen
-cp config-lite pi-gen
-cp config-gui pi-gen
-
 cd pi-gen
+
+git checkout 2021-05-07-raspbian-buster
+
+cp -r ../stage-muondetector-lite .
+cp -r ../stage-muondetector-gui .
+cp ../config-lite .
+cp ../config-gui .
+
+
 
 ./build-docker.sh -c $whichconfig
 
