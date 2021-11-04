@@ -1,5 +1,9 @@
 #!/bin/bash -e
 
+if [ -f /opt/muondetector/setup.done ]; then
+    exit 0
+fi
+
 echo "Welcome to your muondetector."
 echo "For this first setup, please set a new password for the pi user:"
 
@@ -33,3 +37,4 @@ sudo systemctl start muondetector-daemon
 
 echo "You are all setup!"
 echo "Run this script again from /opt/muondetector/initial_setup"
+sudo touch /opt/muondetector/setup.done
