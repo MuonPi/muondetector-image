@@ -7,4 +7,4 @@ KEYBOARD_KEYMAP="de"
 TIMEZONE_DEFAULT="Europe/Berlin"
 ENABLE_SSH=1
 FIRST_USER_NAME="pi"
-STAGE_LIST="stage0 stage1 stage2 stage-muondetector-lite stage3 stage-muondetector-gui"
+STAGE_LIST="stage0 stage1 stage2 stage-muondetector-lite stage3 stage4 stage-muondetector-gui"
