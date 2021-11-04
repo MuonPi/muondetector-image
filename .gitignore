@@ -3,6 +3,7 @@
 !README.md
 !.gitignore
 !make-image.sh
+!build-all.sh
 !make-image-docker.sh
 !config-lite
 !config-gui
